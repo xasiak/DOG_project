@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>입양후기 게시물페이지</title>
+    <title>입양후기 게시물</title>
     <link rel="stylesheet" href="/resources/css/post.css">
     <link rel="stylesheet" href="/resources/css/reset.css">
 </head>
@@ -18,19 +18,19 @@
         <header>
             <div id="header-layer1">
                 <div id="header-layer1-t">
-                    <a href="/page/index.html"><img id="logo-img" src="/resources/images/icon/logo.png" alt=""></a>
+                    <a href="/index.jsp"><img id="logo-img" src="/resources/images/icon/logo.png" alt=""></a>
                 </div>
                 <div id="header-layer1-b">
-                    <a href="/page/index.html"><h1 id="logo1">사랑하개</h1>
-                    <a href="/page/index.html"><p id="logo2">사랑하개는 사지 않고 입양하는 문화를 만듭니다.</p>
+                    <a href="/index.jsp"><h1 id="logo1">사랑하개</h1>
+                    <a href="/index.jsp"><p id="logo2">사랑하개는 사지 않고 입양하는 문화를 만듭니다.</p>
                 </a>
                 </div>
                 
             </div>
             <div id="header-layer2">
                     <ul id="top-menu">
-                        <li><a href="/page/member/login.html">로그인</a></li>
-                        <li><a href="/page/member/terms.html">회원가입</a></li>
+                        <li><a href="/member/login.do">로그인</a></li>
+                        <li><a href="/member/terms.do">회원가입</a></li>
                         <li><a href="#">마이페이지</a></li>
                         <li><a href="#">검색</a></li>
                     </ul>
@@ -48,16 +48,16 @@
                     <a href="#">입양</a>
                     <ul class="depth_1">
                         <li><a href="#">반려동물 정보</a></li>
-                        <li><a href="/page/adopt/guide.html">입양절차</a></li>
+                        <li><a href="/adopt/guide.do">입양절차</a></li>
                         <li><a href="#">보호중 아이들</a></li>
-                        <li><a href="/page/adopt/review.html">입양후기</a></li>
+                        <li><a href="/adopt/review.do">입양후기</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">보호소 방문</a>
                     <ul class="depth_1">
-                        <li><a href="/page/visit/book.html">방문예약</a></li>
-                        <li><a href="/page/visit/location.html">상담문의&방문</a></li>
+                        <li><a href="/visit/book.do">방문예약</a></li>
+                        <li><a href="/visit/location.do">상담문의&방문</a></li>
                     </ul>
                     </li>
                 <li>

@@ -32,8 +32,7 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/WEB-INF/views/member/login.jsp").forward(request, response);
 	}
 
 	/**
@@ -47,17 +46,18 @@ public class LoginController extends HttpServlet {
 		Member mOne = service.selectCheckLogin(member);
 		if(mOne != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("memberId", mOne.getMemberEmail());
+			session.setAttribute("memberEmail", mOne.getMemberEmail());
+			session.setAttribute("memberPw", mOne.getMemberPw());
 			// 로그인 성공
 			request.setAttribute("msg", "로그인 성공!");
 			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/member/serviceSuccess.jsp")
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp")
 			.forward(request, response);
 		} else {
 			// 로그인 실패
-			request.setAttribute("msg", "로그인이 되지 않았습니다.");
+			request.setAttribute("msg", "로그인 실패");
 			request.setAttribute("url", "/member/login.jsp");
-			request.getRequestDispatcher("/member/serviceFailed.jsp")
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
 			.forward(request, response);
 		}
 	}

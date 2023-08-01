@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>로그인페이지</title>
+		<title>로그인</title>
         <link rel="stylesheet" href="/resources/css/login.css">
         <link rel="stylesheet" href="/resources/css/reset.css">
     </head>
@@ -19,19 +20,19 @@
             <header>
                 <div id="header-layer1">
                     <div id="header-layer1-t">
-                        <a href="/page/index.html"><img id="logo-img" src="/resources/images/icon/logo.png" alt=""></a>
+                        <a href="/index.jsp"><img id="logo-img" src="/resources/images/icon/logo.png" alt=""></a>
                     </div>
                     <div id="header-layer1-b">
-                        <a href="/page/index.html"><h1 id="logo1">사랑하개</h1>
-                        <a href="/page/index.html"><p id="logo2">사랑하개는 사지 않고 입양하는 문화를 만듭니다.</p>
+                        <a href="/index.jsp"><h1 id="logo1">사랑하개</h1>
+                        <a href="/index.jsp"><p id="logo2">사랑하개는 사지 않고 입양하는 문화를 만듭니다.</p>
                     </a>
                     </div>
                     
                 </div>
                 <div id="header-layer2">
                         <ul id="top-menu">
-                            <li><a href="/page/member/login.html">로그인</a></li>
-                            <li><a href="/page/member/terms.html">회원가입</a></li>
+                            <li><a href="/member/login.do">로그인</a></li>
+                            <li><a href="/member/terms.do">회원가입</a></li>
                             <li><a href="#">마이페이지</a></li>
                             <li><a href="#">검색</a></li>
                         </ul>
@@ -49,16 +50,16 @@
                         <a href="#">입양</a>
                         <ul class="depth_1">
                             <li><a href="#">반려동물 정보</a></li>
-                            <li><a href="/page/adopt/guide.html">입양절차</a></li>
+                            <li><a href="/adopt/guide.do">입양절차</a></li>
                             <li><a href="#">보호중 아이들</a></li>
-                            <li><a href="/page/adopt/review.html">입양후기</a></li>
+                            <li><a href="/adopt/review.do">입양후기</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">보호소 방문</a>
                         <ul class="depth_1">
-                            <li><a href="/page/visit/book.html">방문예약</a></li>
-                            <li><a href="/page/visit/location.html">상담문의&방문</a></li>
+                            <li><a href="/visit/book.do">방문예약</a></li>
+                            <li><a href="/visit/location.do">상담문의&방문</a></li>
                         </ul>
                         </li>
                     <li>
@@ -75,17 +76,19 @@
                             <div id="or">또는</div>
                             <div class="line"><hr></div>
                         </div>
+                        <form action="/member/login.do" method="post">
                         <div id="id">
-                            <input class="loginform" type="text" name="id" id="id" placeholder="이메일을 입력하세요">
+                            <input class="loginform" type="text" name="member-email" id="id" placeholder="이메일을 입력하세요">
                         </div>
                         <div id="pw"> 
-                            <input class="loginform" type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요">
+                            <input class="loginform" type="password" name="member-pw" id="pw" placeholder="비밀번호를 입력하세요">
                         </div>
                         <div id="keep"> 
                             <input type="checkbox">
                             로그인 상태유지
                         </div>
-                        <div><button id="loginbtn" class="loginform" >로그인</button></div>
+                        <div><button type="submit" id="loginbtn" class="loginform" >로그인</button></div>
+                        </form>
                     </div>
                     <div id="login-footer">
                         <a href="#">회원가입</a>

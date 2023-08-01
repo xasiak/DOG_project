@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
- <title>회원가입 페이지</title>
+ <title>정보수정</title>
         <link rel="stylesheet" href="/resources/css/modify.css">
         <link rel="stylesheet" href="/resources/css/reset.css">
     </head>
@@ -19,19 +19,19 @@
             <header>
                 <div id="header-layer1">
                     <div id="header-layer1-t">
-                        <a href="/page/index.html"><img id="logo-img" src="/resources/images/icon/logo.png" alt=""></a>
+                        <a href="/index.jsp"><img id="logo-img" src="/resources/images/icon/logo.png" alt=""></a>
                     </div>
                     <div id="header-layer1-b">
-                        <a href="/page/index.html"><h1 id="logo1">사랑하개</h1>
-                        <a href="/page/index.html"><p id="logo2">사랑하개는 사지 않고 입양하는 문화를 만듭니다.</p>
+                        <a href="/index.jsp"><h1 id="logo1">사랑하개</h1>
+                        <a href="/index.jsp"><p id="logo2">사랑하개는 사지 않고 입양하는 문화를 만듭니다.</p>
                     </a>
                     </div>
                     
                 </div>
                 <div id="header-layer2">
                         <ul id="top-menu">
-                            <li><a href="/page/member/login.html">로그인</a></li>
-                            <li><a href="/page/member/terms.html">회원가입</a></li>
+                            <li><a href="/member/login.do">로그인</a></li>
+                            <li><a href="/member/terms.do">회원가입</a></li>
                             <li><a href="#">마이페이지</a></li>
                             <li><a href="#">검색</a></li>
                         </ul>
@@ -49,16 +49,16 @@
                         <a href="#">입양</a>
                         <ul class="depth_1">
                             <li><a href="#">반려동물 정보</a></li>
-                            <li><a href="/page/adopt/guide.html">입양절차</a></li>
+                            <li><a href="/adopt/guide.do">입양절차</a></li>
                             <li><a href="#">보호중 아이들</a></li>
-                            <li><a href="/page/adopt/review.html">입양후기</a></li>
+                            <li><a href="/adopt/review.do">입양후기</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">보호소 방문</a>
                         <ul class="depth_1">
-                            <li><a href="/page/visit/book.html">방문예약</a></li>
-                            <li><a href="/page/visit/location.html">상담문의&방문</a></li>
+                            <li><a href="/visit/book.do">방문예약</a></li>
+                            <li><a href="/visit/location.do">상담문의&방문</a></li>
                         </ul>
                         </li>
                     <li>
@@ -77,25 +77,26 @@
                             <img id="camera" src="/resources/images/icon/camera.png" alt="카메라">
                         </div>
                     </div>
-                        
+                    <form action="/member/update.do" method="post">
                         <div id="id">
-                            <input class="modifyform" type="text" name="" id="" placeholder="xasiak@naver.com" disabled>
+                            <input class="modifyform" type="text" name="member-email" id="member-email" value="${ member.memberEmail }" readonly>
                         </div>
                         <div id="pw"> 
-                            <input class="modifyform" type="password" name="" id="" placeholder="비밀번호">
+                            <input class="modifyform" type="password" name="member-pw" id="member-pw" placeholder="비밀번호">
                         </div>
                         <div id="pw-check"> 
-                            <input class="modifyform" type="password" name="" id="" placeholder="비밀번호 확인">
+                            <input class="modifyform" type="password" id="member-pw-check" placeholder="비밀번호 확인">
                         </div>
                         <p class="title" >이름</p>
                         <div id="name">
-                            <input class="modifyform" type="text" name="" id="" placeholder="이름">
+                            <input class="modifyform" type="text" name="member-name" id="member-name" placeholder="이름">
                         </div>
                         <p class="title">연락처</p>
                         <div id="phone">
-                            <input class="modifyform" type="text" name="" id="" placeholder="연락처">
+                            <input class="modifyform" type="text" name="member-phone" id="member-phone" placeholder="연락처">
                         </div>
-                        <div><button id="modifybtn" class="modifyform" >확인</button></div>
+                        <div><button type="submit" id="modifybtn" class="modifyform" >확인</button></div>
+                        </form>
                         <p id="p1">소셜 로그인</p>
                         <div  id="sns"> <button class="modifyform" id="naverbtn"> 네이버 연결해제</button></div>
                         <div id="n">N</div>
@@ -118,5 +119,30 @@
             <div id="footer-right"></div>
         </footer>
         </div>
+        <script type="text/javascript">
+        var password = document.getElementById("member-pw");
+        var check_password = document.getElementById("member-pw-check");
+        function validatePassword(){
+        	  if(password.value != check_password.value) { // 만일 두 인풋 필드값이 같지 않을 경우
+        	    // setCustomValidity의 값을 지정해 무조건 경고 표시가 나게 하고
+        	    check_password.setCustomValidity("비밀번호가 일치하지 않습니다."); 
+        	  } 
+        	  else { // 만일 두 인풋 필드값이 같을 경우
+        	    // 오류가 없으면 메시지를 빈 문자열로 설정해야한다. 오류 메시지가 비어 있지 않은 한 양식은 유효성 검사를 통과하지 않고 제출되지 않는다.
+        	    // 따라서 빈값을 주어 submit 처리되게 한다
+        	    check_password.setCustomValidity(''); 
+        	  }
+      	}
+
+       	password.onchange = validatePassword;
+       	check_password.onkeyup = validatePassword;
+//         	const password = document.querySelector("#member-pw").value;
+//         	const pwCheck = document.querySelector("#member-pw-check").value;
+//         	if(password == pwCheck) {
+//         		alert("same");
+//         	}else{
+//         		alert("different");
+//         	}
+        </script>
     </body>
 </html>

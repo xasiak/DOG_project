@@ -190,8 +190,6 @@ header {
         padding-top: 7px;
     }
     #naverbtn {
-    	width: 800px;
-        height: 40px;
         background-color: #03c75a;
         border-radius: 25px;
         text-align: center;
@@ -225,26 +223,12 @@ header {
         margin: 20px 0 40px;
     
     }
-	.joinform{
-		width:400px;
-		height:40px;
-	}
-    form {
+
+    .joinform {
         width: 800px;
-        height: 200px;
+        height: 40px;
     }
-	ul {
-	list-style-type : none;
-	padding-left : 0;
-	}
-	li {
-		margin : 10px;
-	}
-	ul label {
-		width : 80px;
-		text-align : left;
-		float : left;
-	}
+
 
     ::placeholder {
         font-size: 15px;
@@ -272,13 +256,6 @@ header {
     .title {
         margin-top: 15px;
         font-weight: 500;
-    }
-    
-    .btn {
-    	width : 100px;
-    	height : 30px;
-    	text-aligh : center;
-    	margin : 0 auto;
     }
 
 /* 푸터 */

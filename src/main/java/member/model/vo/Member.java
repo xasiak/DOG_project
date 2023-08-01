@@ -15,8 +15,7 @@ public class Member {
 		this.memberName = memberName;
 		this.memberPhone = memberPhone;
 	}
-
-
+	
 	public Member(String memberEmail, String memberPw) {
 		super();
 		this.memberEmail = memberEmail;

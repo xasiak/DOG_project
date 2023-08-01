@@ -31,7 +31,7 @@ public class TermsController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("/member/terms.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/member/terms.jsp");
 		view.forward(request, response);
 	}
 
