@@ -21,8 +21,8 @@ public class PostDAO {
 			pstmt = conn.prepareStatement(query);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
-				Post notice = rsetToPost(rset);
-				nList.add(notice);
+				Post post = rsetToPost(rset);
+				nList.add(post);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -69,8 +69,8 @@ public class PostDAO {
 		post.setPostContent(rset.getString("POST_CONTENT"));
 		post.setPostWriter(rset.getString("POST_WRITER"));
 		post.setPostLike(rset.getInt("POST_LIKE"));
-		post.setPostDate(rset.getTimestamp("POST_DATE"));
-		post.setUpdateDate(rset.getTimestamp("UPDATE_DATE"));
+		post.setPostDate(rset.getDate("POST_DATE"));
+		post.setUpdateDate(rset.getDate("UPDATE_DATE"));
 		post.setViewCount(rset.getInt("VIEW_COUNT"));
 		return post;
 	}

@@ -1,6 +1,8 @@
 package visit.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,8 +35,15 @@ public class BookController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String userName = request.getParameter("user-name");
+		String userPhone = request.getParameter("user-phone");
+		String point = request.getParameter("point");
+//		Date selectedDate = request.getParameter("selected");
+		String concerns = request.getParameter("concerns");
+		String house = request.getParameter("house");
+		String family = request.getParameter("family");
+		
+		
 	}
 
 }

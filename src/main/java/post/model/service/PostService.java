@@ -18,17 +18,17 @@ public class PostService {
 		jdbcTemplate = JDBCTemplate.getInstance(); //new jdbcTemplate 안됨 (싱글톤 패턴 적용때문)
 	}
 	
-	public List<Post> selectNoticeList() {
+	public List<Post> selectPostList() {
 		Connection conn = jdbcTemplate.createConnection();
 		List<Post> nList = pDao.selectPostList(conn);
 		jdbcTemplate.close(conn);
 		return nList;
 	}
 
-	public Post selectOneByNo(int noticeNo) {
+	public Post selectOneByNo(int postNo) {
 		Connection conn = jdbcTemplate.createConnection();
-		Post notice = pDao.selectOneByNo(conn, noticeNo);
+		Post post = pDao.selectOneByNo(conn, postNo);
 		jdbcTemplate.close(conn);
-		return notice;
+		return post;
 	}
 }

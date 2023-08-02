@@ -17,7 +17,7 @@ import post.model.vo.Post;
 /**
  * Servlet implementation class PostController
  */
-@WebServlet("/adopt/postlist.do")
+@WebServlet("/post/postlist.do")
 public class PostListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,11 +34,11 @@ public class PostListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PostService service = new PostService();
-		List<Post> nList = service.selectNoticeList();
+		List<Post> nList = service.selectPostList();
 		request.setAttribute("nList", nList);
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp");
 		view.forward(request, response);
-		request.getRequestDispatcher("/WEB-INF/views/adopt/post.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp").forward(request, response);
 	}
 
 	/**

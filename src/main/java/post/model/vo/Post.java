@@ -1,6 +1,6 @@
 package post.model.vo;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class Post {
 	private int postNo;
@@ -8,8 +8,8 @@ public class Post {
 	private String postContent;
 	private String postWriter;
 	private int postLike;
-	private Timestamp postDate;
-	private Timestamp updateDate;
+	private Date postDate;
+	private Date updateDate;
 	private int viewCount;
 	
 	public Post() {}
@@ -46,16 +46,16 @@ public class Post {
 	public void setPostLike(int postLike) {
 		this.postLike = postLike;
 	}
-	public Timestamp getPostDate() {
+	public Date getPostDate() {
 		return postDate;
 	}
-	public void setPostDate(Timestamp postDate) {
+	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
 	}
-	public Timestamp getUpdateDate() {
+	public Date getUpdateDate() {
 		return updateDate;
 	}
-	public void setUpdateDate(Timestamp updateDate) {
+	public void setUpdateDate(Date updateDate) {
 		this.updateDate = updateDate;
 	}
 	public int getViewCount() {
