@@ -2,6 +2,7 @@ package post.controller;
 
 import java.io.IOException;
 
+
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -33,12 +34,14 @@ public class PostListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PostService service = new PostService();
-		List<Post> nList = service.selectPostList();
-		request.setAttribute("nList", nList);
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp");
-		view.forward(request, response);
-		request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp").forward(request, response);
+//		PostService service = new PostService();
+//		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
+//		PageData pd = service.selectPostList(currentPage);
+//		List<Post> nList = service.selectPostList();
+//		request.setAttribute("nList", nList);
+//		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp");
+//		view.forward(request, response);
+//		request.getRequestDispatcher("/WEB-INF/views/post/postlist.jsp").forward(request, response);
 	}
 
 	/**
