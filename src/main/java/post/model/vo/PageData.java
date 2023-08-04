@@ -3,19 +3,23 @@ package post.model.vo;
 import java.util.List;
 
 public class PageData {
-	private List<Post> nList;
+	private List<Post> pList;
 	private String pageNavi;
 	
 	public PageData() {}
 	
-	
+	public PageData(List<Post> pList, String pageNavi) {
+		super();
+		this.pList = pList;
+		this.pageNavi = pageNavi;
+	}
 
-	public List<Post> getnList() {
-		return nList;
+	public List<Post> getpList() {
+		return pList;
 	}
 
 	public void setnList(List<Post> nList) {
-		this.nList = nList;
+		this.pList = pList;
 	}
 
 	public String getPageNavi() {
@@ -28,7 +32,7 @@ public class PageData {
 
 	@Override
 	public String toString() {
-		return "PageData [nList=" + nList + ", pageNavi=" + pageNavi + "]";
+		return "PageData [nList=" + pList + ", pageNavi=" + pageNavi + "]";
 	}
 
 }

@@ -1,32 +1,24 @@
-package post.controller;
+package member.controller;
 
 import java.io.IOException;
-
-
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import post.model.service.PostService;
-import post.model.vo.PageData;
-import post.model.vo.Post;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class PostController
+ * Servlet implementation class LogoutController
  */
-@WebServlet("/post/list.do")
-public class PostListController extends HttpServlet {
+@WebServlet("/member/logout.do")
+public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PostListController() {
+    public LogoutController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,14 +27,13 @@ public class PostListController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PostService service = new PostService();
-		int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		PageData pd = service.selectPostList(currentPage);
-		List<Post> pList = pd.getpList();
-		request.setAttribute("pList", pList);
-		request.setAttribute("pageNavi", pd.getPageNavi());
-		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/views/post/list.jsp");
-		view.forward(request, response);
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		if(session != null) {
+			session.invalidate(); // 세션파괴 -> 세션 저장 정보 사라짐 -> 로그아웃
+			response.sendRedirect("/index.jsp");
+			// 자바(서버)에서의 location.href
+		}
 	}
 
 	/**

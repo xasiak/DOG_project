@@ -61,9 +61,15 @@ public class BookController extends HttpServlet {
 			book = new Book(userName, userPhone, point, selectDate, concern, house, houseHold);
 			int result = service.insertBook(book);
 			if(result > 0) {
-				
+				request.setAttribute("msg", "방문예약이 완료되었습니다.");
+				request.setAttribute("url", "/index.jsp");
+				request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp")
+				.forward(request, response);
 			}else {
-				
+				request.setAttribute("msg", "방문예약에 실패하였습니다.");
+				request.setAttribute("url", "/visit/book.jsp");
+				request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp")
+				.forward(request, response);
 			}
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

@@ -41,72 +41,72 @@
                         <legend>가장 우려하는 사항</legend>
                         <ul id="form2">
                             <li>
-                                <input type="radio" name="concerns" id="concerns" values="">
+                                <input type="radio" name="concerns" id="concerns" value="턱빠짐">
                                 <label for="concerns">턱빠짐</label>
                             </li>
                             <li>
-                                <input type="radio" name="concerns" id="concerns" values="">
+                                <input type="radio" name="concerns" id="concerns" value="크기">
                                 <label for="concerns">크기</label>
                             </li>
                             <li>
-                                <input type="radio" name="concerns" id="concerns" values="">
+                                <input type="radio" name="concerns" id="concerns" value="운동량">
                                 <label for="concerns">운동량</label>
                         </li>
                         <li>
-                            <input type="radio" name="concerns" id="concerns" values="">
+                            <input type="radio" name="concerns" id="concerns" value="배변훈련">
                             <label for="concerns">배변훈련</label>
                         </li>
                         <li>
-                            <input type="radio" name="concerns" id="concerns" values="">
+                            <input type="radio" name="concerns" id="concerns" value="짖음(소음)">
                             <label for="concerns">짖음(소음)</label>
                         </li>
                         <li>
-                            <input type="radio"  name="concerns" id="concerns" values=""> 기타 : <input type="text" name="concerns" placeholder="" > <br>
+                            <input type="radio" id="concerns" value=""> 기타 : <input type="text" name="concerns" placeholder="" > <br>
                             <!-- <label for="concerns"></label> -->
                         </li>
                     </ul>
                         <legend>주거형태</legend>
                     <ul id="form3">
                         <li>
-                            <input type="radio" name="house" id="house" values="">
+                            <input type="radio" name="house" id="house" value="아파트">
                             <label for="house">아파트</label>
 
                         </li>
                         <li>
-                            <input type="radio" name="house" id="house" values="">
+                            <input type="radio" name="house" id="house" value="단독주택">
                             <label for="house">단독주택</label>
 
                         </li>
                         <li>
-                            <input type="radio" name="house" id="house" values="">
+                            <input type="radio" name="house" id="house" value="원룸~투룸">
                             <label for="house">원룸~투룸</label>
                         </li>
                         <li>  
-                            <input type="radio"  name="house" id="house"> 기타 : <input type="text" name="house" placeholder="" > <br>
+                            <input type="radio"  id="house"> 기타 : <input type="text" name="house" placeholder="" > <br>
                             <!-- <label for="house"></label> -->
                         </li>
                     </ul>
                         <legend>가구</legend>
                     <ul id="form4">
                         <li>
-                            <input type="radio" name="house-hold" id="house-hold" values="">
+                            <input type="radio" name="house-hold" id="house-hold" value="1인가구">
                             <label for="family">1인가구</label>
                         </li>
                         <li>
-                            <input type="radio" name="house-hold" id="house-hold" values="">
+                            <input type="radio" name="house-hold" id="house-hold" value="신혼부부">
                             <label for="family">신혼부부</label>
                         </li>
                         <li>
-                            <input type="radio" name="house-hold" id="house-hold" values="">
+                            <input type="radio" name="house-hold" id="house-hold" value="3~4인 핵가족">
                             <label for="family">3~4인 핵가족</label>
                             
                         </li>
                         <li>
-                            <input type="radio" name="house-hold" id="house-hold" values="">
+                            <input type="radio" name="house-hold" id="house-hold" value="5인 이상 대가족">
                             <label for="family">5인 이상 대가족</label>
                         </li>
                         <li>
-                            <input type="radio"  name="house-hold" id="house-hold"> 기타 : <input type="text" name="house-hold" placeholder="" > <br>
+                            <input type="radio" id="house-hold"> 기타 : <input type="text" name="house-hold" placeholder="" > <br>
                             <!-- <label for="family"></label> -->
                         </li>
                     </ul>

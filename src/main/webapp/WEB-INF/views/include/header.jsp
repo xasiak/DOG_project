@@ -21,6 +21,7 @@
     <div id="header-layer2">
             <ul id="top-menu">
 				<c:if test="${sessionScope.memberEmail ne null}">
+                <li><a href="/member/logout.do">로그아웃</a></li>
                 <li><a href="/member/update.do?member-email=${memberEmail }">마이페이지</a></li>
         		</c:if>
         		<c:if test="${sessionScope.memberEmail eq null}">
@@ -45,7 +46,7 @@
                 <li><a href="#">반려동물 정보</a></li>
                 <li><a href="/adopt/guide.do">입양절차</a></li>
                 <li><a href="#">보호중 아이들</a></li>
-                <li><a href="/post/postlist.do">입양후기</a></li>
+                <li><a href="/post/list.do">입양후기</a></li>
             </ul>
         </li>
         <li>

@@ -32,7 +32,7 @@
 <!--                                 </div> -->
 <!--                             </div> -->
 <!--                     </div></a> -->
-                    <c:forEach  var="post" items="${requestScope.nList }">
+                    <c:forEach  var="post" items="${requestScope.pList }">
                      <div class="post">
                         <div class="post-t">
                             <img class="dog-img" src="/resources/images/adopt/adopt1.png" alt="">
