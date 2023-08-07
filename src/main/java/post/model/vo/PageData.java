@@ -34,5 +34,4 @@ public class PageData {
 	public String toString() {
 		return "PageData [nList=" + pList + ", pageNavi=" + pageNavi + "]";
 	}
-
 }
